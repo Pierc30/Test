@@ -981,7 +981,7 @@ namespace GSGD2.Player
 					if (HasAWallInFrontOfCharacter == false)
 					{
 
-						if (_hasBeganToFallFromGroundedState == true && _hasBeganToFallFromGroundedStateAndDidDash == false && _resetJumpCountWhenFalling == true)
+						if (_hasBeganToFallFromGroundedState == true && _hasBeganToFallFromGroundedStateAndDidDash == false && _resetDashCountWhenFalling == true)
 						{
 							ResetDashCount(_allowedDashCountWhenFalling);
 							_hasBeganToFallFromGroundedStateAndDidDash = true;
