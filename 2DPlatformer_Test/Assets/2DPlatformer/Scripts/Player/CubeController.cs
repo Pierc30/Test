@@ -309,6 +309,11 @@ namespace GSGD2.Player
 		{
 			_jump.AddMaximumAllowedForcesWhileInAir(toAdd);
 		}
+		
+		public void AddJumpCountWhenWallJumping(int toAdd)
+		{
+			_allowedJumpCountWhenWallJumping = Mathf.RoundToInt(Mathf.Clamp(_allowedJumpCountWhenWallJumping + toAdd, 0f, float.MaxValue));
+		}
 
 		public void AddMaximumAllowedForceToDash(int toAdd)
 		{
@@ -916,7 +921,7 @@ namespace GSGD2.Player
 				bool canWallGrabOppositeWall = wallNormal != _wallNormalDuringLastWallGrab;
 				if (IsWallGrabDisabled == false || canWallGrabOppositeWall == true)
 				{
-					bool isNotASlope = Mathf.Abs(wallNormal.z) == 1;
+					bool isNotASlope = Mathf.Approximately(Mathf.Abs(wallNormal.z), 1);
 					if (HasAWallInFrontOfCharacter == true && isNotASlope == true && _willPerformWallGrab == true)
 					{
 						_willPerformWallGrab = false;

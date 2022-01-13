@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Pickup.AbilityModifier.AddMaximumForceToDash
   m_EditorClassIdentifier: 
   _destroyPickupOnApply: 1
-  _ability: 1
-  _modifier: 2
+  _ability: 0
+  _modifier: 4

@@ -24,6 +24,8 @@
 			Disable,
 			AddOneAllowedForce,
 			RemoveOneAllowedForce,
+			AddOneForceAfterJumpWall,
+			RemoveOneForceAfterJumpWall,
 		}
 
 		[SerializeField]
@@ -48,7 +50,12 @@
 					{
 						player.AddMaximumAllowedForceToJump(_modifier == Modifier.AddOneAllowedForce ? 1 : -1);
 					}
+					else if (_modifier == Modifier.AddOneForceAfterJumpWall || _modifier == Modifier.RemoveOneForceAfterJumpWall)
+                    {
+						player.AddJumpCountWhenWallJumping(_modifier == Modifier.AddOneForceAfterJumpWall ? 1 : -1);
+                    }
 					break;
+					
 				case Ability.Dash:
 				{
 					if (_modifier == Modifier.Enable || _modifier == Modifier.Disable)
